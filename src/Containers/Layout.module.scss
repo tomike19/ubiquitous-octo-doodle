@@ -1,0 +1,61 @@
+::-webkit-scrollbar {
+	width: 0px;
+	background: transparent;
+}
+
+.card {
+	position: absolute;
+	width: 364px;
+	left: 2px;
+
+	background: rgba(255, 255, 255, 0.4);
+}
+
+.searchandfilterbar {
+	position: sticky;
+	height: 50px;
+	top: 0px;
+	z-index: 1;
+	background: #f3f4f6;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+}
+
+.businesslist {
+	position: absolute;
+	width: 366px;
+	height: 90vh;
+	left: 40px;
+	overflow-y: scroll;
+}
+
+.search {
+	position: absolute;
+	width: 250.07px;
+	height: 35px;
+	left: 57.48px;
+	top: 4px;
+}
+
+.inputBox {
+	position: absolute;
+	left: 15.83%;
+	right: 15.28%;
+	top: 30%;
+	bottom: 5%;
+
+	background: #ffffff;
+	border-radius: 50px;
+	border: none;
+}
+
+.inputBox:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+
+.container {
+	max-height: 100%;
+	overflow: auto;
+}

@@ -1,0 +1,43 @@
+$primaryColor: #219700;
+$secondaryColor: #474056;
+$secondaryColor2: #757083;
+$secondaryColor3: #8a95a5;
+$secondaryColor4: #b9c6ae;
+$secondaryColor5: #c6ebbe;
+
+.nav {
+	// position: absolute;
+	// background: #ffffff;
+	box-shadow: 0px 12px 20px rgba(160, 121, 0, 0.2);
+}
+
+.logo {
+}
+
+.signupLink {
+	text-decoration: none !important;
+}
+.signupLink:active {
+	text-decoration: none !important;
+}
+
+.signupButton {
+	background-color: $primaryColor !important;
+	border-radius: 25px !important;
+	border: none !important;
+	outline: none !important;
+}
+
+.login {
+	color: $primaryColor;
+	display: block;
+	padding: 0.5rem 1rem;
+	text-decoration: none !important;
+}
+
+.login:hover {
+	color: $secondaryColor5;
+	display: block;
+	padding: 0.5rem 1rem;
+	text-decoration: none !important;
+}

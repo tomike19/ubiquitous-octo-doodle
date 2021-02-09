@@ -1,0 +1,88 @@
+$white: white;
+$text-black: black;
+$black: black;
+
+.login {
+	padding: 9px 11px 9px 12px;
+	position: relative;
+}
+.border {
+	width: 898px;
+	height: 748px;
+	background-color: rgba(248, 255, 247, 1);
+	border-radius: 35px;
+	position: relative;
+	border: 1px solid $black;
+	backdrop-filter: blur(4px);
+}
+.logo {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	position: absolute;
+	right: 395px;
+	top: 56px;
+}
+.appwithmepng1 {
+	margin-bottom: 7px;
+	margin-left: 3px;
+}
+.text1 {
+	font-family: "Montserrat";
+	font-size: 24px;
+	font-weight: 700;
+	color: $text-black;
+}
+.dontHaveAnAccountSignUp {
+	position: absolute;
+	right: 256px;
+	bottom: 254px;
+	font-family: "Montserrat";
+	font-size: 12px;
+	font-weight: 400;
+	color: rgba(92, 92, 92, 1);
+	& .dontHaveAnAccountSignUpEmphasis2 {
+		font-family: "Montserrat";
+		font-size: 12px;
+		font-weight: 400;
+		color: rgba(0, 0, 0, 0.6);
+	}
+	& .dontHaveAnAccountSignUpEmphasis3 {
+		font-family: "Montserrat";
+		font-size: 12px;
+		font-weight: 400;
+		color: rgba(33, 151, 0, 1);
+	}
+}
+.button {
+	border-radius: 100px;
+	padding: 19px 185px 19px 186px;
+	box-shadow: 0 12px 35px 0 rgba(160, 121, 0, 0.2);
+	display: flex;
+	align-items: center;
+	background: linear-gradient(
+		262deg,
+		rgba(36, 169, 0, 1) 9%,
+		rgba(36, 169, 0, 1) 11%,
+		rgba(30, 141, 0, 1) 96%
+	);
+	position: absolute;
+	left: 244px;
+	bottom: 185px;
+}
+.signIn {
+	font-family: "Montserrat";
+	font-size: 18px;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 1);
+	text-align: center;
+}
+.text2 {
+	font-family: "Montserrat";
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(92, 92, 92, 1);
+	position: absolute;
+	left: 340px;
+	top: 279px;
+}

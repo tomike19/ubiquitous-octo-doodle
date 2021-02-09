@@ -1,0 +1,39 @@
+$text-black: black;
+$white: white;
+
+.username {
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.label {
+	font-family: "Montserrat";
+	font-size: 14px;
+	font-weight: 400;
+	color: $text-black;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+.flexWrapperOne {
+	background-color: $white;
+	border-radius: 100px;
+	padding: 21px 173px 22px 9px;
+	display: flex;
+	align-items: center;
+	border: 1px solid rgba(239, 239, 239, 1);
+}
+.input {
+	width: 239px;
+	font-family: "Montserrat";
+	font-size: 14px;
+	font-weight: 400;
+	color: $text-black;
+	&::placeholder {
+		width: 239px;
+		font-family: "Montserrat";
+		font-size: 14px;
+		font-weight: 400;
+		color: $text-black;
+	}
+}

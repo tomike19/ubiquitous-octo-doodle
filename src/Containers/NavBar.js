@@ -3,8 +3,10 @@ import { NavLink, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import * as authActions from "../store/actions/auth";
 import * as businessActions from "../store/actions/businessRedux";
-import { Navbar, Nav, Button } from "react-bootstrap";
+import { Navbar, Nav} from "react-bootstrap";
 import NavBarStyle from "./NavBar.module.scss";
+import Login from '../Components/login'
+import Signup from '../Components/signup'
 
 const NavBar = (props) => {
 	return (
@@ -39,14 +41,16 @@ const NavBar = (props) => {
 				</Nav>
 			) : (
 				<Nav className="ml-auto">
-					<NavLink className={NavBarStyle.login} to="/login">
-						Login
-					</NavLink>
-					<NavLink className={NavBarStyle.signupLink} to="/signup">
-						<Button variant="primary" className={NavBarStyle.signupButton}>
+					{/* <NavLink className={NavBarStyle.login} to="/login"> */}
+						{/* Login */}
+						<Login/>
+						<Signup/>
+					{/* </NavLink> */}
+					{/* <NavLink className={NavBarStyle.signupLink} to="/signup"> */}
+						{/* <Button variant="primary" className={NavBarStyle.signupButton}>
 							<span className="text-white">Signup</span>
-						</Button>
-					</NavLink>
+						</Button> */}
+					{/* </NavLink> */}
 				</Nav>
 			)}
 		</Navbar>

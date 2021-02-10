@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
+import { Button, Modal } from "react-bootstrap";
+import App from "../Components/img/App.png";
 import * as actions from "../store/actions/auth";
 import Loading from "./Loading";
+import Signup from "../Components/SignupForm";
 
 class LogInForm extends Component {
 	constructor(props) {
@@ -25,6 +28,11 @@ class LogInForm extends Component {
 		const { username, password } = this.state;
 		this.props.onAuth(username, password);
 	};
+
+	handleLoginModalShowHide() {
+		this.setState({ showHide: !this.state.showHide });
+	}
+
 	render() {
 		const { redirect, isLoading, loginError } = this.props;
 		return (
@@ -33,51 +41,94 @@ class LogInForm extends Component {
 				{isLoading === true ? (
 					<Loading />
 				) : (
-					<form className="p-3" onSubmit={this.handleFormSubmit}>
-						<div className="form-group">
-							{loginError && (
-								<div className="text-center text-danger">
-									{loginError.name}: Incorrect username or password
+						<div className="login">
+				<Button
+					variant="Light"
+					className="button"
+					onClick={() => this.handleLoginModalShowHide()}
+				>
+					Login
+				</Button>
+
+				<Modal show={this.state.showHide}>
+					<Modal.Header
+						closeButton
+						onClick={() => this.handleLoginModalShowHide()}
+					>
+						<Modal.Title>
+							{" "}
+							<img src={App} width="40" height="30" className="img" alt="" />
+							<br />
+							<span className="text mb-5">Appwitme</span>
+						</Modal.Title>
+					</Modal.Header>
+
+					<Modal.Body className="body">
+						<p className="text-center">Login to your account to continue</p>
+						<form>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroup-sizing-sm">
+										<i class="fa fa-envelope"></i>
+									</span>
 								</div>
-							)}
-							<label htmlFor="exampleInputEmail1">Username</label>
-							<input
-								type="text"
-								name="username"
-								value={this.state.username}
-								onChange={this.handleChange}
-								className="form-control form-control-sm"
-								id="exampleInputEmail1"
-							/>
+								<input
+									type="text"
+									class="form-control"
+									placeholder="Email"
+									aria-label="Email"
+									onChange={this.handleChange}
+									value={this.state.email}
+									aria-describedby="basic-addon1"
+								/>
+							</div>
+
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroup-sizing-sm">
+										<i class="fa fa-lock"></i>
+									</span>
+								</div>
+
+								<input
+									type="password"
+									class="form-control"
+									placeholder="Password"
+									aria-label="Password"
+									aria-describedby="basic-addon1"
+									onChange={this.handleChange}
+									value={this.state.password}
+								/>
+							</div>
+
+							<p className="text-center" style={{ color: "black" }}>
+								Don't have an account?
+								<Signup
+									className="Login-signup"
+									style={{ backgroundColor: "transparent" }}
+									onClick={() => {
+										this.handleLoginModalShowHide();
+									}}
+								/>
+							</p>
+						</form>
+					</Modal.Body>
+
+					<Modal.Footer>
+						<div className="col-12 text-center">
+							<Button
+								variant="success"
+								className="submitBtn btn-default"
+								onClick={
+									(() => this.handleLoginModalShowHide(), this.state.showHide)
+								}
+							>
+								Submit
+							</Button>
 						</div>
-						<div className="form-group">
-							<label htmlFor="exampleInputPassword1">Password</label>
-							<input
-								type="password"
-								name="password"
-								value={this.state.password}
-								onChange={this.handleChange}
-								className="form-control form-control-sm"
-								id="exampleInputPassword1"
-							/>
-						</div>
-						<div className="form-group form-check form-control-sm">
-							<input
-								type="checkbox"
-								name="remember"
-								className="form-check-input"
-								id="exampleCheck1"
-							/>
-							<label className="form-check-label" htmlFor="exampleCheck1">
-								Remember me
-							</label>
-						</div>
-						<button type="submit" className="btn btn-dark">
-							Login
-						</button>{" "}
-						or
-						<NavLink to="/signup/"> Signup</NavLink>
-					</form>
+					</Modal.Footer>
+				</Modal>
+			</div>
 				)}
 			</>
 		);
